@@ -29,7 +29,7 @@ SECRET_KEY = 'eyvc5r1#wikxhgq7&*%lzm*!ze5ll9h(i=320gpy^*bwoewzp2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['sagnolkamdem-1.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['sagnolkamdem-cv.herokuapp.com', '127.0.0.1']
 
 # Application definition
 
