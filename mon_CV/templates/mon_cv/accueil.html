@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}
+Accueil
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <div class="row">
+        <div class="col">
+            <div class="jumbotron"
+                style="background-color: cadetblue; margin: 20 auto; text-align: center; color: white;">
+                {% for autre in autres %}
+                <img class="rounded-circle" src="{{ autre.photo.url }}" width="175px" height="150px"
+                    alt="Photo_Etudiant">
+                <p>{{ autre.titre }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <h1 style="text-align: center; margin: 7px auto;"><span>FORMATION</span></h1>
+
+    <div class="row" id="#formation" style="margin-top: 20px;">
+        {% for formation in formations %}
+        <div class="col-12 col-sm-6 col-lg-6">
+            <div class="card shadow-lg" style="border: none;margin: 0px 20px; text-align: center;">
+                <div class="card-body">
+                    <h2 class="card-top">{{ formation.diplom }} <span>:</span> {{ formation.sessOb }} </h2>
+                    <p class="card-text text-center"><u>{{ formation.description }}</u><span>.</span></p>
+                    <p class="btn" style="background-color:powderblue">{{ formation.nbre_annee_ob }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h1 style="text-align: center; margin: 7px auto;"><span>EXPERIENCE</span></h1>
+
+    <div class="row" style="margin-top: 20px;">
+        {% for experience in experiences %}
+        <div class="col-12 col-sm-6 col-lg-6">
+            <div class="card shadow-lg" style="border: none;margin: 0px 20px; text-align: center;">
+                <div class="card-body">
+                    <h2 class="card-top">{{ experience.nom_entreprise }} <span>:</span>
+                        {{ experience.total_exp}} mois </h2>
+                    <p class="card-text text-center"><u>Poste occupe</u><span>:</span>{{ experience.poste_occupe}}</p>
+                    <p class="btn" style="background-color:powderblue">{{ experience.date_debut }} <span>-</span>
+                        {{ experience.date_fin }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}

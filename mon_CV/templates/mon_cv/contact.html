@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+CONTACT
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <div class="row">
+        <div class="col">
+            <div class="jumbotron"
+                style="background-color: cadetblue; margin: 20 auto; text-align: center; color: white;">
+                {% if renvoi %} <div class="alert alert-primary" role="alert">
+                    Message envoye avec succes
+                </div>
+                {% endif %}
+                <h3><span>Contact: </span>655155074, sagnolkamdem721@gmail.com</h3>
+
+                <form action="{% url 'contact' %}" method="POST">
+                    <div class="form-group" style="width: 500px; margin: 0 auto;">
+                        {% csrf_token %}
+                        {{ form.as_table }}
+                        <input type="submit" class="btn btn-primary" style="margin-top: 20px; background-color: orange;"
+                            value="Valider" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

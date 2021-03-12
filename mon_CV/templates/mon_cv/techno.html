@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}
+Technologies
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <div class="row">
+        <div class="col">
+            <div class="jumbotron"
+                style="background-color: cadetblue; margin: 20 auto; text-align: center; color: white;">
+                {% for autre in autres %}
+                <img class="rounded-circle" src="{{ autre.photo.url }}" width="175px" height="150px"
+                    alt="Photo_Etudiant">
+                <p>{{ autre.titre }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <h1 style="text-align: center; margin: 7px auto;"><span>Competences et Portfolio</span></h1>
+
+    <div class="row" style="margin: 20px;">
+        {% for competence in competences %}
+
+        <div class="col-12 col-sm-6 col-lg-6">
+            <div class="card shadow-lg" style="border: none;margin: 20px 20px; text-align: center;">
+                <div class="card-body">
+                    <h2 class="card-top">{{ competence.nom_de_la_competence }}<span> : </span>
+                        {{ competence.niveau_de_maitrise }} </h2>
+                    <p class="card-text text-center"><u>Projet</u><span> : </span>{{ competence.nom_du_projet }}</p>
+                    <p class="btn" style="background-color:powderblue">{{ competence.statut_competence }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}
