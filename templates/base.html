@@ -1,0 +1,48 @@
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/my_style.css' %}" />
+  <title>{% block title %} {% endblock %}</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: cadetblue">
+    <a class="navbar-brand" href="{% url 'accueil' %}">Sagnol Kamdem<span>.</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav" style="padding-left: 20px">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'accueil' %}">Formations et Experience<span
+              class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'techno' %}">Technologies et projets</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  {% block content %} {% endblock %}
+
+  <footer style="margin-top: 20px;" id="bonjour">
+    <h1>Sagnol Kamdem<span><h4>655155074, sagnolkamdem721@gmail.com</h4></span></h1>
+    <p>Copyright © 2020. Tous droits réservés.</p>
+  </footer>
+
+  <script src="{% static 'js/jquery.slim.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>
